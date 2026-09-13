@@ -17,7 +17,7 @@ local carpetReady=false
 local buttons={}
 local plotButtons={}
 local attachment0,attachment1,alignPos
-local spamming=true
+local spamming=false
 local spamThread=nil
 local chasing=false
 local espEnabled=false
@@ -949,8 +949,8 @@ else
 	layout.Padding = UDim.new(0,4)
 	layout.Parent = scroll
 
-	local spamBtn = makeButton(mainFrame, "SPAM PURCHASE: ON",
-		UDim2.new(1,-10,0,28), UDim2.new(0,5,1,-60), Color3.fromRGB(80,40,40))
+	local spamBtn = makeButton(mainFrame, "SPAM PURCHASE: OFF",
+		UDim2.new(1,-10,0,28), UDim2.new(0,5,1,-60), Color3.fromRGB(40,80,40))
 	local stopBtn = makeButton(mainFrame, "STOP ALL",
 		UDim2.new(1,-10,0,28), UDim2.new(0,5,1,-28), Color3.fromRGB(60,60,60), 11)
 
@@ -1309,4 +1309,4 @@ RS.Heartbeat:Connect(function()
 	end
 end)
 
-spamPurchase()
+-- spamPurchase()  -- disabled by default; user toggles via UI
